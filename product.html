@@ -1,0 +1,30 @@
+
+	
+	<div class="panel panel-default row" ng-controller="productsCtrl">
+		<div class="col-xs-3">
+			<!-- <input type="text" ng-model="bbb">{{bbb}}  -->
+			<!-- ng-model 绑定输入框 -->
+			<button class="btn btn-default btn-block btn-lg" ng-click="selectCategory('all')" ng-class="changeClassOfCategory('all')">
+				全部
+			</button>
+			<button class="btn btn-default btn-block btn-lg" ng-repeat="product in products|unique:'style'" ng-click="selectCategory(product)" ng-class="changeClassOfCategory(product)">
+				{{product}}
+			</button>
+			
+		</div>
+		<div class="col-xs-9">
+			<div class="well col-xs-4   text-center text-hidden text-nowrap" ng-repeat="product in pageProducts" >
+				<img src="http://{{product.src}}" class="img-polaroid " alt="">
+				<h4 style="overflow:hidden; padding:0 5%;">
+					{{product.title}}
+				</h4>
+				<span class=" label label-info" style="font-size:16px;margin-top:30px;">{{product.price|currency:"￥"}}</span>
+					 <!-- //系统自带过滤  ：后面表示过滤参数 -->
+				<button class="btn btn-success " ng-click="addToCart(product)">加入购物车</button>
+				
+			</div>
+			<div class="pull-right btn-group pull-bottom">
+				<button class="btn btn-default" ng-repeat="page in getPageNumbers()" ng-click="getProductsOfPage(page)" ng-class="changeClassOfSelectedPage(page)">{{page}}</button>
+			</div>
+		</div>
+	</div>
