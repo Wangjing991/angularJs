@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- ng-app定义应用程序 -->
+<body ng-app="shop" ng-controller="mainCtrl">
+	<div class="container-fluid">
+		<div class="navbar navbar-inverse">
+			<a href="#products" class="navbar-brand" ng-bind="name"></a>
+			<cart-info></cart-info>
+			</div>
+		</div>
+	
+	<ng-view></ng-view>
+
+</body>
+<!-- <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script> -->
+
+<script src="js/angular.min.js"></script>
+<!--  <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<script src="js/route.js"></script>
+<script src="js/customFilters.js"></script>
+<script src="js/app.js"></script>
+<script src="js/product.js"></script>
+<script src="js/checkout.js"></script>
+
+</html>
